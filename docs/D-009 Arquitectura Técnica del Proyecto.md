@@ -798,11 +798,14 @@ MAX_PROJECTS
 
 Con el fin de mantener un código limpio, legible y fácil de mantener, se establecen las siguientes reglas de desarrollo.
 
-### Idioma
+### Idioma del Proyecto
 
-* El código fuente se desarrollará completamente en inglés.
-* La documentación oficial del proyecto se redactará en español.
-* Los comentarios dentro del código deberán utilizarse únicamente cuando sean realmente necesarios.
+Con el objetivo de mantener consistencia entre la documentación y el código fuente, DevTrack adoptará las siguientes convenciones de idioma:
+
+* La documentación oficial del proyecto se redactará completamente en español.
+* El código fuente (variables, funciones, clases, interfaces, tipos y nombres de archivos) se desarrollará completamente en inglés.
+* Los nombres de carpetas del proyecto utilizarán inglés y seguirán las convenciones definidas en este documento.
+* Los comentarios dentro del código deberán escribirse preferiblemente en inglés y utilizarse únicamente cuando aporten información relevante que no pueda deducirse del propio código.
 
 ---
 
@@ -846,6 +849,27 @@ Esto facilitará la lectura y consistencia del código.
 Git será el sistema oficial de control de versiones de DevTrack.
 
 Todo cambio significativo deberá quedar registrado mediante commits claros y trazables.
+
+### Idioma de los Commits
+
+Los mensajes de commit deberán seguir las convenciones estándar de Git utilizando un prefijo técnico en inglés y una descripción en español.
+
+Ejemplos:
+
+```text
+docs: actualiza la arquitectura técnica
+
+feat: agrega el módulo de autenticación
+
+fix: corrige la validación del formulario de registro
+
+refactor: reorganiza la estructura del frontend
+
+style: mejora los estilos del dashboard
+```
+
+Esta convención facilita la comprensión del historial del proyecto y mantiene coherencia con la documentación oficial de DevTrack.
+
 
 ### Commits
 
@@ -1074,6 +1098,21 @@ Antes de cerrar una actividad deberán realizarse las siguientes acciones:
 ---
 
 ## Revisión Final
+
+## Procedimiento de Cierre de Sprint
+
+Al finalizar cada sprint deberá seguirse el siguiente procedimiento antes de iniciar el siguiente:
+
+1. Revisar los entregables desarrollados.
+2. Actualizar los documentos afectados.
+3. Verificar la coherencia entre la documentación del proyecto.
+4. Registrar el avance en la bitácora oficial.
+5. Actualizar el Product Backlog si corresponde.
+6. Realizar el commit utilizando la convención establecida.
+7. Sincronizar el repositorio con GitHub.
+8. Declarar oficialmente cerrado el sprint.
+9. Iniciar el siguiente sprint.
+
 
 Antes de iniciar una nueva actividad deberá verificarse que:
 
