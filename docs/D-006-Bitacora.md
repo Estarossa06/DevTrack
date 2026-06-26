@@ -245,3 +245,41 @@ Se completó la base conceptual del Sistema de Diseño de DevTrack, estableciend
 
 Iniciar el Sprint F1-S2 para definir la identidad visual, incluyendo el logotipo, la paleta de colores, la tipografía y los lineamientos gráficos.
 
+### BD-007
+
+**Fecha:** Junio 2026
+
+**Fase:** Fase 1 - Diseño del Sistema
+
+**Sprint:** F1-S2 - Identidad Visual
+
+### Actividad Realizada
+
+Se completó el documento D-008 Sistema de Diseño, definiendo la identidad visual oficial de DevTrack.
+
+Durante este sprint se establecieron:
+
+* Sistema oficial de logotipos.
+* Filosofía y psicología del color.
+* Paleta de colores.
+* Sistema tipográfico.
+* Sistema de iconografía.
+* Sistema de componentes.
+* Reglas generales de diseño.
+
+### Decisiones Tomadas
+
+* Se aprobó el logotipo oficial de DevTrack y sus tres variantes (Logotipo Principal, Isotipo y App Icon).
+* Se adoptó un sistema de colores basado en Design Tokens.
+* Se definió la tipografía oficial del proyecto.
+* Se estableció Lucide Icons como biblioteca oficial de iconografía.
+* Se documentó el inventario inicial de componentes reutilizables.
+
+### Resultado
+
+El Sistema de Diseño quedó preparado para servir como guía durante el desarrollo del frontend.
+
+### Próximo Paso
+
+Iniciar el Sprint F1-S3 para definir la arquitectura del sistema de componentes y comenzar la preparación del desarrollo de la interfaz.
+
