@@ -200,3 +200,48 @@ La Fase 0 quedó formalmente cerrada y DevTrack cuenta con una base documental s
 
 Iniciar la Fase 1 - Diseño del Sistema.
 
+### BD-006
+
+**Fecha:** Junio 2026
+
+**Fase:** Fase 1 - Diseño del Sistema
+
+**Sprint:** F1-S1 - Identidad Visual
+
+**Actividad Realizada:**
+
+* Creación del documento D-008 Sistema de Diseño.
+* Definición de la filosofía del diseño de DevTrack.
+* Definición del concepto del producto.
+* Definición de la misión y visión del producto.
+* Definición de la personalidad de la marca.
+* Identificación de los valores del producto.
+* Definición del público objetivo.
+* Establecimiento de los principios de diseño.
+* Definición de la experiencia esperada del usuario.
+* Registro de las decisiones de diseño.
+* Definición de los criterios de calidad del sistema de diseño.
+
+**Decisiones Tomadas:**
+
+* DevTrack tendrá como propósito principal visualizar la evolución profesional del desarrollador.
+* La interfaz priorizará simplicidad, claridad y enfoque en el progreso del usuario.
+* El sistema de diseño será construido antes del desarrollo del frontend.
+* Se estableció el eslogan oficial: "Tu evolución como desarrollador, en un solo lugar."
+
+**Problemas Encontrados:**
+
+* Fue necesario redefinir el alcance del sistema de diseño para separar la identidad conceptual de la identidad visual.
+
+**Soluciones Aplicadas:**
+
+* División del diseño en sprints, comenzando por la identidad conceptual antes de abordar elementos visuales.
+
+**Resultado:**
+
+Se completó la base conceptual del Sistema de Diseño de DevTrack, estableciendo los principios que guiarán el diseño de la interfaz durante el desarrollo del proyecto.
+
+**Próximo Paso:**
+
+Iniciar el Sprint F1-S2 para definir la identidad visual, incluyendo el logotipo, la paleta de colores, la tipografía y los lineamientos gráficos.
+

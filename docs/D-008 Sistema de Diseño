@@ -1,0 +1,232 @@
+# D-008 Sistema de Diseño (Design System)
+
+## Control del Documento
+
+### Información General
+
+| Campo                | Valor           |
+| -------------------- | --------------- |
+| Proyecto             | DevTrack        |
+| Documento            | D-008           |
+| Versión              | 1.0             |
+| Estado               | En elaboración  |
+| Responsable          | Sebastián Campo |
+| Fecha de Creación    | Junio 2026      |
+| Última Actualización | Junio 2026      |
+
+### Historial de Versiones
+
+| Versión | Fecha      | Autor           | Descripción                            |
+| ------- | ---------- | --------------- | -------------------------------------- |
+| 1.0     | Junio 2026 | Sebastián Campo | Creación del sistema de diseño inicial |
+
+---
+
+# Objetivo
+
+Definir la identidad visual, principios de diseño y componentes gráficos que servirán como guía para el desarrollo de la interfaz de DevTrack.
+
+---
+
+# Filosofía del Diseño
+
+DevTrack no es únicamente una aplicación para gestionar proyectos.
+
+Su propósito es convertirse en el espacio donde un desarrollador pueda visualizar su crecimiento profesional mediante proyectos, tecnologías, habilidades y metas de aprendizaje.
+
+Cada decisión de diseño debe reforzar esa idea.
+
+La interfaz debe transmitir profesionalismo, claridad, organización y evolución constante.
+
+---
+
+# Concepto del Producto
+
+# Misión del Producto
+
+Brindar a desarrolladores y estudiantes una plataforma que les permita documentar, organizar y visualizar su crecimiento profesional mediante el seguimiento de proyectos, tecnologías, habilidades y metas de aprendizaje.
+
+DevTrack busca convertir el proceso de aprendizaje en una experiencia medible, organizada y motivadora, facilitando la construcción de un portafolio de evolución personal.
+
+# Visión del Producto
+
+Convertirse en la plataforma de referencia para desarrolladores que desean registrar, analizar y demostrar su evolución profesional a través de proyectos, conocimientos y experiencia adquirida durante su proceso de aprendizaje.
+
+## DevTrack
+
+**"Tu evolución como desarrollador, en un solo lugar."**
+
+Mientras otras plataformas permiten gestionar tareas o almacenar código, DevTrack busca documentar el proceso completo de crecimiento de un desarrollador.
+
+No reemplaza herramientas como GitHub, Notion o Trello; las complementa mostrando aquello que normalmente no queda registrado: el aprendizaje, la experiencia adquirida y la evolución profesional.
+
+---
+
+# Personalidad de la Marca
+
+DevTrack debe percibirse como:
+
+* Profesional.
+* Tecnológica.
+* Minimalista.
+* Clara.
+* Motivadora.
+
+La aplicación debe inspirar al usuario a continuar aprendiendo y desarrollando nuevos proyectos.
+
+---
+
+# Valores del Producto
+
+* Progreso.
+* Aprendizaje.
+* Organización.
+* Profesionalismo.
+* Evolución continua.
+
+Cada nueva funcionalidad incorporada deberá contribuir al menos a uno de estos valores.
+
+---
+
+# Público Objetivo
+
+* Estudiantes de Ingeniería y Tecnología.
+* Desarrolladores Junior.
+* Desarrolladores Freelance.
+* Personas en proceso de aprendizaje de tecnologías.
+
+---
+
+# Principios de Diseño
+
+| Principio              | Descripción                                                                               |
+| ---------------------- | ----------------------------------------------------------------------------------------- |
+| Simplicidad            | La interfaz debe mostrar únicamente la información necesaria para cada contexto.          |
+| Intuitividad           | Un usuario nuevo debe comprender la navegación sin necesidad de instrucciones.            |
+| Jerarquía Visual       | Las funciones más importantes siempre deben ser las más visibles.                         |
+| Consistencia           | Los componentes y patrones de interacción deben mantenerse iguales en toda la aplicación. |
+| Enfoque en el Progreso | El crecimiento del usuario debe ser visible en cualquier momento.                         |
+
+---
+
+# Identidad Visual
+
+(Esta sección la construiremos en las siguientes etapas.)
+
+## Logo
+
+Pendiente.
+
+## Paleta de Colores
+
+Pendiente.
+
+## Tipografía
+
+Pendiente.
+
+## Iconografía
+
+Pendiente.
+
+## Componentes
+
+Pendiente.
+
+---
+
+# Experiencia del Usuario
+
+## Sensación de Progreso
+
+DevTrack debe mostrar constantemente el crecimiento del usuario.
+
+La aplicación debe reflejar visualmente el avance mediante indicadores, estadísticas, metas cumplidas y evolución de habilidades, generando motivación para continuar aprendiendo.
+
+El progreso debe ser uno de los elementos principales de la experiencia del usuario.
+
+---
+
+## Primera Impresión
+
+Al ingresar por primera vez a DevTrack, el usuario debe percibir una interfaz limpia, profesional y fácil de comprender. Las funciones principales deben ser visibles desde el primer momento, evitando elementos innecesarios o sobrecarga de información.
+
+La aplicación debe transmitir la sensación de estar utilizando una herramienta creada específicamente para desarrolladores.
+
+---
+
+## Durante la Navegación
+
+Cada pantalla debe tener un propósito claro.
+
+El usuario debe poder identificar rápidamente:
+
+* Dónde se encuentra.
+* Qué puede hacer.
+* Cómo regresar.
+* Cuál es la acción principal de la pantalla.
+
+La navegación debe minimizar la cantidad de clics necesarios para completar una tarea.
+
+---
+
+## Regla de los 10 Segundos
+
+Cualquier usuario nuevo debe comprender la finalidad de una pantalla y localizar sus funciones principales en menos de diez segundos, sin necesidad de instrucciones o tutoriales.
+
+Si una interfaz requiere explicaciones para ser utilizada, deberá replantearse su diseño antes de ser implementada.
+
+# Decisiones de Diseño
+
+## DD-001
+
+DevTrack tendrá una interfaz minimalista para reducir la carga cognitiva del usuario.
+
+---
+
+## DD-002
+
+La navegación principal estará disponible desde cualquier pantalla.
+
+---
+
+## DD-003
+
+El progreso del usuario será uno de los elementos visuales más importantes del sistema.
+
+---
+
+## DD-004
+
+El diseño priorizará la claridad de la información sobre los elementos decorativos.
+
+---
+
+## DD-005
+
+Toda decisión visual deberá reforzar la filosofía del producto: mostrar la evolución profesional del desarrollador.
+
+## Sensación Final
+
+Al finalizar cada sesión en DevTrack, el usuario debe sentir que ha dado un paso más en su crecimiento profesional.
+
+La aplicación debe transmitir progreso, organización y motivación, incentivando el regreso continuo para seguir construyendo su evolución como desarrollador.
+
+# Criterios de Calidad del Diseño
+
+| Criterio        | Objetivo                                                                       |
+| --------------- | ------------------------------------------------------------------------------ |
+| Claridad        | La información importante debe identificarse en menos de 10 segundos.          |
+| Consistencia    | Todos los componentes deben seguir el mismo patrón visual.                     |
+| Accesibilidad   | El contenido debe ser legible y usable por cualquier usuario.                  |
+| Escalabilidad   | El diseño debe permitir agregar nuevas funcionalidades sin romper la interfaz. |
+| Profesionalismo | Cada pantalla debe transmitir confianza y calidad.                             |
+
+
+# Estado del Documento
+
+Versión: 1.0
+
+Estado: En elaboración
+
+Responsable: Sebastián Campo
