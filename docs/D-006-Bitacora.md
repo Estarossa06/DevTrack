@@ -283,3 +283,50 @@ El Sistema de Diseño quedó preparado para servir como guía durante el desarro
 
 Iniciar el Sprint F1-S3 para definir la arquitectura del sistema de componentes y comenzar la preparación del desarrollo de la interfaz.
 
+### BD-008
+
+**Fecha:** Junio 2026
+
+**Fase:** Fase 2 – Arquitectura Técnica
+
+**Sprint:** F2-S1 – Arquitectura Técnica
+
+### Actividades Realizadas
+
+* Definición de la organización oficial del repositorio.
+* Documentación de la arquitectura del frontend.
+* Documentación de la arquitectura del backend.
+* Definición de la arquitectura de la base de datos.
+* Establecimiento de las convenciones de desarrollo.
+* Documentación del flujo general de la aplicación.
+* Definición de la Definition of Done (DoD).
+* Actualización de los documentos D-003 y D-004 para mantener la coherencia arquitectónica.
+
+### Decisiones Tomadas
+
+* Se aprobó la arquitectura técnica oficial de DevTrack.
+* Se definió la estructura base del frontend y del backend.
+* Se establecieron las convenciones oficiales de desarrollo y control de versiones.
+* Se adoptó Prisma ORM como herramienta de acceso a datos dentro de la arquitectura del proyecto.
+
+### Problemas Encontrados
+
+* Fue necesario definir claramente los límites entre la arquitectura conceptual (D-003), el diseño de la base de datos (D-004) y la arquitectura técnica (D-009) para evitar duplicidad de información.
+
+### Soluciones Aplicadas
+
+* Se delimitó el alcance de cada documento.
+* Se incorporaron referencias cruzadas entre los documentos para mantener la coherencia documental.
+
+### Resultado
+
+La Fase 2 – Sprint F2-S1 quedó finalizada con la arquitectura técnica del proyecto completamente documentada y preparada para iniciar la implementación.
+
+### Próximo Sprint
+
+F2-S2 – Configuración del Entorno de Desarrollo.
+
+### Estado
+
+✅ Sprint completado.
+

@@ -100,3 +100,27 @@ Product Backlog
 - Trabajo Colaborativo
 - Aplicación Móvil
 - Inteligencia Artificial
+
+# Plan de Sprints
+
+## Fase 1 – Planificación
+
+| Sprint | Objetivo                                   | Estado       |
+| ------ | ------------------------------------------ | ------------ |
+| F1-S1  | Identidad del producto y Sistema de Diseño | ✅ Completado |
+
+---
+
+## Fase 2 – Arquitectura
+
+| Sprint | Objetivo                                  | Estado       |
+| ------ | ----------------------------------------- | ------------ |
+| F2-S1  | Arquitectura Técnica                      | ✅ Completado |
+| F2-S2  | Configuración del Entorno de Desarrollo   | ⏳ Próximo    |
+| F2-S3  | Configuración del Backend y Base de Datos | ⏳ Pendiente  |
+
+---
+
+## Próximas Fases
+
+Las siguientes fases serán detalladas conforme avance el desarrollo del proyecto y se definan nuevos entregables.

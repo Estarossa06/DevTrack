@@ -5,11 +5,11 @@ Nombre del Sistema
 
 DevTrack
 
-Tipo de Arquitectura
+# Tipo de Arquitectura
 
 Arquitectura cliente-servidor de tres capas.
 
-Objetivo
+# Objetivo
 
 Definir la estructura técnica del sistema, los componentes principales, sus responsabilidades y la forma en que interactúan entre sí.
 
@@ -17,7 +17,7 @@ Arquitectura General
 
 DevTrack implementará una arquitectura de tres capas compuesta por:
 
-Capa de Presentación
+# Capa de Presentación
 
 Responsable de la interacción con el usuario.
 
@@ -52,7 +52,7 @@ Gestionar autenticación.
 Coordinar acceso a datos.
 Capa de Datos
 
-Responsable del almacenamiento persistente.
+# Responsable del almacenamiento persistente.
 
 Tecnologías:
 
@@ -65,3 +65,19 @@ Almacenar información.
 Gestionar relaciones.
 Garantizar integridad de datos.
 Ejecutar consultas.
+
+## Relación con la Arquitectura Técnica
+
+La arquitectura conceptual descrita en este documento se complementa con el documento **D-009 – Arquitectura Técnica del Proyecto**, donde se define la organización del repositorio, la arquitectura del frontend y backend, la estructura de la base de datos y las convenciones de desarrollo que guiarán la implementación del sistema.
+
+## Flujo entre Capas
+
+La comunicación entre las capas del sistema seguirá un flujo unidireccional.
+
+La capa de presentación enviará solicitudes a la capa de negocio mediante la API del sistema.
+
+La capa de negocio procesará las solicitudes, aplicará las reglas correspondientes y accederá a la capa de datos cuando sea necesario.
+
+Finalmente, la información procesada será devuelta a la capa de presentación para su visualización al usuario.
+
+Esta separación garantiza un bajo acoplamiento entre componentes y facilita el mantenimiento y evolución del sistema.

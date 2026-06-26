@@ -22,7 +22,7 @@ Tipo de Base de Datos
 
 Relacional
 
-Modelo Conceptual
+Modelo Conceptual de Datos
 Entidades Principales
 Usuario
 Proyecto
@@ -135,7 +135,23 @@ Estado: En elaboración
 
 Responsable: Sebastián Campo
 
+## Integración con la Arquitectura Técnica
 
+La implementación de la base de datos seguirá la arquitectura definida en el documento **D-009 – Arquitectura Técnica del Proyecto**.
+
+El acceso a la información se realizará mediante la capa de repositorios del backend utilizando Prisma ORM como herramienta de acceso a datos.
+
+Toda modificación del esquema deberá gestionarse mediante migraciones versionadas para garantizar la trazabilidad y consistencia del modelo de datos.
+
+## Flujo de Acceso a los Datos
+
+El acceso a la información almacenada en la base de datos seguirá una arquitectura controlada para garantizar la integridad y consistencia de los datos.
+
+Ningún componente del frontend accederá directamente a la base de datos.
+
+Toda solicitud será procesada por la API del sistema, la cual aplicará las reglas de negocio correspondientes antes de interactuar con la capa de persistencia.
+
+Este enfoque permite mantener la seguridad, la trazabilidad y la independencia entre la lógica de negocio y el almacenamiento de la información.
 
 
 

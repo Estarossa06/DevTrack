@@ -240,3 +240,34 @@ Versión: 1.0
 Última actualización: Junio 2026
 
 Responsable: Sebastián Campo
+
+## Cierre de la Fase 1 – Sistema de Diseño
+
+### Estado
+
+Completada.
+
+### Objetivo alcanzado
+
+Se definió la identidad conceptual y visual de DevTrack mediante la elaboración del documento D-008 Sistema de Diseño.
+
+### Entregables principales
+
+* Identidad conceptual del producto.
+* Sistema oficial de logotipos.
+* Paleta de colores.
+* Sistema tipográfico.
+* Sistema de iconografía.
+* Sistema de componentes.
+* Principios de experiencia de usuario.
+* Criterios de calidad del diseño.
+
+### Resultado
+
+DevTrack cuenta con una identidad visual completa y documentada, lista para servir como base del desarrollo del frontend.
+
+### Próxima fase
+
+Fase 2 – Arquitectura del Frontend.
+
+En esta fase se definirá la estructura visual de la aplicación, la organización de las pantallas, la arquitectura del proyecto React y la preparación del entorno de desarrollo.
