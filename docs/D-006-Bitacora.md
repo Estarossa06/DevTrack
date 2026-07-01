@@ -330,3 +330,29 @@ F2-S2 – Configuración del Entorno de Desarrollo.
 
 ✅ Sprint completado.
 
+**Sprint:** F2-S3 – Dashboard V1
+
+### Actividades Realizadas
+
+* Configuración del proyecto React con Vite.
+* Configuración de TypeScript y Tailwind CSS.
+* Implementación de la arquitectura del frontend definida en el D-009.
+* Creación del MainLayout.
+* Implementación del Sidebar y Header.
+* Configuración del sistema de rutas.
+* Desarrollo del Dashboard V1.
+* Implementación del UI Kit inicial (Card, Button, Badge y Progress).
+* Creación de los componentes DashboardStats, LearningGoals, RecentProjects y RecentActivity.
+
+### Resultado
+
+Se completó la primera funcionalidad visual del sistema, estableciendo la base del frontend y la estructura reutilizable de componentes.
+
+### Próximo Sprint
+
+Iniciar el Sprint F2-S4 con la implementación del módulo de autenticación.
+
+### Estado
+
+✅ Sprint completado.
+
