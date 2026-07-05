@@ -3,9 +3,11 @@ import {
   RecentProjects,
   RecentActivity,
   LearningGoals,
-} from "../components/Dashboard";
+} from "@/components/dashboard";
 
-import Button from "../components/ui/Button";
+import { Button } from "@/components/ui";
+
+import { env } from "@/config";
 
 export default function DashboardPage() {
   return (
@@ -14,8 +16,12 @@ export default function DashboardPage() {
       <section>
 
         <h1 className="text-3xl font-bold">
-          Welcome back, Sebastián 👋
+          Welcome back, Sebastián
         </h1>
+
+        <p className="text-sm text-[var(--color-gray-500)]">
+        {env.appName} - {env.appVersion}
+        </p>
 
         <div className="mt-6 flex gap-4">
 
