@@ -356,3 +356,72 @@ Iniciar el Sprint F2-S4 con la implementación del módulo de autenticación.
 
 ✅ Sprint completado.
 
+### BD-009
+
+**Fecha:** Julio 2026
+
+**Fase:** Fase 2 – Arquitectura Técnica
+
+**Sprint:** F2-S4 y F2-S5 – Autenticación e Infraestructura Frontend
+
+### Actividades Realizadas
+
+* Implementación del módulo completo de autenticación del frontend.
+* Desarrollo de las páginas Login y Register.
+* Creación de los componentes LoginForm y RegisterForm.
+* Implementación del contexto global de autenticación mediante React Context API.
+* Desarrollo del hook personalizado useAuth.
+* Implementación del componente ProtectedRoute para proteger las rutas privadas.
+* Persistencia de la sesión utilizando LocalStorage.
+* Implementación del proceso de cierre de sesión (Logout).
+* Corrección de la estructura de rutas utilizando React Router DOM.
+* Eliminación de la duplicación del MainLayout en las rutas privadas.
+* Reorganización completa de la arquitectura de componentes.
+* Separación de los componentes en los módulos auth, dashboard, shared y ui.
+* Implementación de Barrel Exports para los módulos principales.
+* Configuración del alias @ para simplificar los imports del proyecto.
+* Migración de los imports hacia la nueva arquitectura.
+* Configuración centralizada de variables de entorno mediante el módulo config.
+* Creación de la infraestructura inicial para la comunicación con la API.
+* Instalación y configuración de Axios.
+* Implementación de httpClient como cliente HTTP centralizado.
+* Creación de los servicios authApi, projectApi y taskApi.
+* Validación funcional completa de la aplicación tras la refactorización.
+
+### Decisiones Tomadas
+
+* Centralizar toda la configuración del proyecto dentro del módulo config.
+* Utilizar el alias @ como estándar oficial para los imports entre módulos.
+* Organizar los componentes siguiendo una arquitectura basada en dominios funcionales.
+* Implementar Barrel Exports para reducir la complejidad de los imports.
+* Preparar la infraestructura de comunicación con el backend antes de iniciar el desarrollo funcional de la Fase 3.
+* Mantener una única instancia de Axios mediante httpClient para todas las solicitudes HTTP futuras.
+
+### Problemas Encontrados
+
+* Se detectó una duplicación del MainLayout debido a una configuración incorrecta de las rutas privadas.
+* Se presentaron conflictos al renombrar la carpeta Dashboard a dashboard debido al manejo de mayúsculas y minúsculas en Windows.
+* La reorganización de carpetas provocó múltiples errores temporales de resolución de imports.
+* Se identificó una advertencia relacionada con la configuración de baseUrl en TypeScript 6.
+
+### Soluciones Aplicadas
+
+* Reestructuración completa del AppRouter eliminando la duplicación del MainLayout.
+* Renombrado progresivo de la carpeta dashboard para evitar conflictos con Git y Windows.
+* Migración completa de los imports utilizando el alias @.
+* Revisión y validación de toda la arquitectura antes de continuar con el desarrollo.
+* Adaptación de la configuración del proyecto para mantener compatibilidad con las versiones actuales de TypeScript y Vite.
+
+### Resultado
+
+Se completó la infraestructura base del frontend de DevTrack.
+
+El proyecto quedó preparado para iniciar el desarrollo de funcionalidades de negocio durante la Fase 3, contando con una arquitectura modular, escalable y preparada para la futura integración con el backend.
+
+### Próximo Sprint
+
+F3-S1 – Gestión de Proyectos.
+
+### Estado
+
+✅ Sprint completado.

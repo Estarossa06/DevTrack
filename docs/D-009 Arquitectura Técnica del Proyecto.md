@@ -194,6 +194,18 @@ Validaciones.
 Conversión de datos.
 Funciones matemáticas.
 Helpers generales.
+### Configuración Centralizada
+
+La configuración global del frontend se concentra en el directorio `config`, desde donde se gestionan las variables de entorno mediante el módulo `env.ts`.
+
+```text
+config/
+│
+├── env.ts
+└── index.ts
+```
+
+Las variables de entorno se acceden exclusivamente a través del objeto `env`, evitando el uso directo de `import.meta.env` en el resto de la aplicación.
 
 ## Interfaz de Usuario
 
@@ -292,6 +304,25 @@ Servicio de habilidades.
 Servicio de metas.
 
 Los servicios serán el único punto autorizado para realizar peticiones HTTP hacia la API.
+
+### Capa de Comunicación con la API
+
+Durante el Sprint F2-S5 se implementó una capa dedicada para la comunicación con el backend.
+
+```text
+services/
+│
+├── api/
+│   ├── httpClient.ts
+│   ├── authApi.ts
+│   ├── projectApi.ts
+│   ├── taskApi.ts
+│   └── index.ts
+│
+└── authService.ts
+```
+
+Esta estructura desacopla la lógica de negocio de la implementación del cliente HTTP y facilita futuras modificaciones sin afectar a los componentes React.
 
 context/
 
@@ -1132,3 +1163,54 @@ Solo después de esta revisión podrá darse por finalizada una actividad o inic
 **Estado:** En elaboración
 
 **Responsable:** Sebastián Campo
+
+## Organización Modular de Componentes
+
+Durante los Sprint F2-S4 y F2-S5 se adoptó una arquitectura modular para los componentes del frontend con el objetivo de mejorar la mantenibilidad, la reutilización y la escalabilidad del proyecto.
+
+La carpeta `components` quedó organizada de la siguiente manera:
+
+```text
+components/
+│
+├── auth/
+│   ├── LoginForm/
+│   └── RegisterForm/
+│
+├── dashboard/
+│   ├── DashboardStats/
+│   ├── LearningGoals/
+│   ├── RecentActivity/
+│   ├── RecentProjects/
+│   └── index.ts
+│
+├── shared/
+│   ├── Header/
+│   ├── Sidebar/
+│   ├── ProtectedRoute/
+│   └── index.ts
+│
+└── ui/
+    ├── Badge/
+    ├── Button/
+    ├── Card/
+    ├── FormField/
+    ├── Input/
+    ├── PasswordInput/
+    ├── Progress/
+    └── index.ts
+```
+
+Cada módulo agrupa componentes con una responsabilidad específica, reduciendo el acoplamiento entre funcionalidades y facilitando el crecimiento del proyecto.
+
+## Principios Arquitectónicos
+
+A partir de la finalización del Sprint F2-S5 se adoptan los siguientes principios para el desarrollo del frontend:
+
+- Organización por dominios funcionales.
+- Uso del alias `@` para dependencias entre módulos.
+- Uso de Barrel Exports para simplificar las importaciones.
+- Separación entre componentes de interfaz, lógica de negocio y comunicación con la API.
+- Centralización de la configuración mediante el módulo `config`.
+- Existencia de un único cliente HTTP (`httpClient`) para todas las solicitudes externas.
+- Reutilización prioritaria de componentes antes de crear nuevas implementaciones.
