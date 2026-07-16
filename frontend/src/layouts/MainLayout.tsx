@@ -7,22 +7,31 @@ import {
 
 export default function MainLayout() {
   return (
-    <div className="flex min-h-screen bg-[var(--color-gray-100)]">
+    <div className="flex min-h-screen bg-[var(--color-background)]">
+
       {/* Sidebar */}
-      <aside className="w-72 border-r border-[var(--color-gray-300)] bg-white">
+      <aside
+        className="
+          w-64
+          border-r
+          border-[var(--color-border)]
+          bg-[var(--color-sidebar)]
+        "
+      >
         <Sidebar />
       </aside>
 
-      {/* Contenido principal */}
+      {/* Contenido */}
       <div className="flex flex-1 flex-col">
-        {/* Header */}
+
         <Header />
 
-        {/* Contenido de las páginas */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-8">
           <Outlet />
         </main>
+
       </div>
+
     </div>
   );
 }

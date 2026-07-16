@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProjectWorkspacePage from "../pages/ProjectWorkspacePage";
 
 import { ProtectedRoute } from "@/components/shared";
 import MainLayout from "../layouts/MainLayout";
@@ -28,6 +29,7 @@ export default function AppRouter() {
           <Route element={<MainLayout />}>
             <Route path="/" element={<DashboardPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:id" element={<ProjectWorkspacePage />} />
             <Route path="/tasks" element={<TasksPage />} />
             <Route path="/skills" element={<SkillsPage />} />
             <Route path="/goals" element={<GoalsPage />} />

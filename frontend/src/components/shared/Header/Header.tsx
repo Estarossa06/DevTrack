@@ -1,24 +1,12 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ChevronDown, Bell } from "lucide-react";
 
 import useAuth from "@/hooks/useAuth";
 
-const pageTitles: Record<string, string> = {
-  "/": "Dashboard",
-  "/projects": "Projects",
-  "/tasks": "Tasks",
-  "/skills": "Skills",
-  "/goals": "Goals",
-  "/profile": "Profile",
-  "/settings": "Settings",
-};
-
 export default function Header() {
-  const location = useLocation();
   const navigate = useNavigate();
 
   const { user, logout } = useAuth();
-
-  const title = pageTitles[location.pathname] ?? "DevTrack";
 
   function handleLogout() {
     logout();
@@ -26,33 +14,63 @@ export default function Header() {
   }
 
   return (
-    <header className="flex h-16 items-center justify-between border-b border-[var(--color-gray-300)] bg-white px-6">
-      <h2 className="text-xl font-semibold text-[var(--color-black)]">
-        {title}
-      </h2>
+    <header
+      className="
+        flex
+        h-16
+        items-center
+        justify-end
+        gap-6
+        border-b
+        border-[var(--color-border)]
+        bg-[var(--color-surface)]
+        px-8
+      "
+    >
+      {/* Notificaciones (temporal) */}
+      <button
+        className="
+          rounded-xl
+          p-2
+          text-[var(--color-text-secondary)]
+          transition
+          hover:bg-[var(--color-surface-hover)]
+          hover:text-[var(--color-text)]
+        "
+      >
+        <Bell size={20} />
+      </button>
 
-      <div className="flex items-center gap-4">
+      {/* Usuario */}
+      <button
+        className="
+          flex
+          items-center
+          gap-3
+          rounded-xl
+          px-3
+          py-2
+          transition
+          hover:bg-[var(--color-surface-hover)]
+        "
+        onClick={handleLogout}
+      >
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary)] font-bold text-white">
-          {user?.name?.charAt(0) ?? "U"}
+          {user?.name?.charAt(0).toUpperCase() ?? "U"}
         </div>
 
-        <div>
-          <p className="font-medium">
+        <div className="text-left">
+          <p className="font-semibold text-[var(--color-text)]">
             {user?.name ?? "Usuario"}
           </p>
 
-          <p className="text-sm text-[var(--color-gray-600)]">
+          <p className="text-xs text-[var(--color-text-secondary)]">
             Software Engineer
           </p>
         </div>
 
-        <button
-          onClick={handleLogout}
-          className="rounded-lg border border-red-500 px-3 py-2 text-sm text-red-500 transition hover:bg-red-500 hover:text-white"
-        >
-          Cerrar sesión
-        </button>
-      </div>
+        <ChevronDown size={18} className="text-[var(--color-text-secondary)]" />
+      </button>
     </header>
   );
 }
