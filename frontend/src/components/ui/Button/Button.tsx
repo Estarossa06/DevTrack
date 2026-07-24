@@ -36,6 +36,14 @@ export default function Button({
       hover:bg-[var(--color-surface-hover)]
       hover:text-[var(--color-text)]
     `,
+
+    danger: `
+    bg-[var(--color-danger)]
+    text-white
+    hover:bg-[var(--color-danger-dark)]
+    hover:shadow-lg
+  `,
+  
   };
 
   const sizes = {

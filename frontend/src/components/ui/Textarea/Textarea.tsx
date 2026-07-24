@@ -1,37 +1,39 @@
-import type { InputProps } from "./Input.types";
+import type { TextareaProps } from "./Textarea.types";
 
-export default function Input({
+export default function Textarea({
   className = "",
   ...props
-}: InputProps) {
+}: TextareaProps) {
   return (
-    <input
+    <textarea
       className={`
         w-full
 
         rounded-xl
         border
-        border-[var(--color-gray-300)]
+        border-[var(--color-border)]
 
         bg-[var(--color-surface)]
-
         px-4
         py-3
 
+        text-sm
         text-[var(--color-text)]
+
         placeholder:text-[var(--color-text-secondary)]
 
-        outline-none
-        transition-all
+        transition-colors
         duration-200
 
         focus:border-[var(--color-primary)]
+        focus:outline-none
         focus:ring-2
-        focus:ring-[var(--color-primary)]
-        focus:ring-opacity-20
+        focus:ring-[var(--color-primary)]/20
 
-        disabled:bg-[var(--color-gray-100)]
         disabled:cursor-not-allowed
+        disabled:opacity-50
+
+        resize-none
 
         ${className}
       `}
