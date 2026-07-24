@@ -425,3 +425,25 @@ F3-S1 – Gestión de Proyectos.
 ### Estado
 
 ✅ Sprint completado.
+
+Fecha:
+13/07/2026
+
+Sprint:
+F3-S2
+
+Objetivos alcanzados:
+
+- Se implementó la navegación hacia Project Workspace.
+- Se creó la estructura inicial del Workspace.
+- Se implementó WorkspaceHeader.
+- Se implementó WorkspaceTabs.
+- Se creó el componente Overview.
+- Se reorganizó la arquitectura del Workspace.
+- Se mejoró el Design System.
+- Se definió el documento D-012 – Diseño del Workspace.
+
+Estado:
+
+Workspace funcional con navegación entre pestañas.
+Overview en desarrollo.
