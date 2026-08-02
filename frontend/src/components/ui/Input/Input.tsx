@@ -1,41 +1,51 @@
+import { forwardRef } from "react";
+
 import type { InputProps } from "./Input.types";
 
-export default function Input({
-  className = "",
-  ...props
-}: InputProps) {
-  return (
-    <input
-      className={`
-        w-full
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  function Input(
+    {
+      className = "",
+      ...props
+    },
+    ref
+  ) {
+    return (
+      <input
+        ref={ref}
+        className={`
+          w-full
 
-        rounded-xl
-        border
-        border-[var(--color-gray-300)]
+          rounded-xl
+          border
+          border-[var(--color-gray-300)]
 
-        bg-[var(--color-surface)]
+          bg-[var(--color-surface)]
 
-        px-4
-        py-3
+          px-4
+          py-3
 
-        text-[var(--color-text)]
-        placeholder:text-[var(--color-text-secondary)]
+          text-[var(--color-text)]
+          placeholder:text-[var(--color-text-secondary)]
 
-        outline-none
-        transition-all
-        duration-200
+          outline-none
+          transition-all
+          duration-200
 
-        focus:border-[var(--color-primary)]
-        focus:ring-2
-        focus:ring-[var(--color-primary)]
-        focus:ring-opacity-20
+          focus:border-[var(--color-primary)]
+          focus:ring-2
+          focus:ring-[var(--color-primary)]
+          focus:ring-opacity-20
 
-        disabled:bg-[var(--color-gray-100)]
-        disabled:cursor-not-allowed
+          disabled:bg-[var(--color-gray-100)]
+          disabled:cursor-not-allowed
 
-        ${className}
-      `}
-      {...props}
-    />
-  );
-}
+          ${className}
+        `}
+        {...props}
+      />
+    );
+  }
+);
+
+export default Input;

@@ -105,6 +105,44 @@ function updateProject(
   return updatedProject;
 }
 
+function updateProjectProgress(
+  id: string,
+  progress: number,
+  lastCheckpoint: string,
+  nextStep: string
+): Project | null {
+  const projects = loadProjects();
+
+  const index = projects.findIndex(
+    (project) => project.id === id
+  );
+
+  if (index === -1) {
+    return null;
+  }
+
+  const normalizedProgress = Math.min(
+    100,
+    Math.max(0, progress)
+  );
+
+  const updatedProject: Project = {
+    ...projects[index],
+
+    progress: normalizedProgress,
+    lastCheckpoint: lastCheckpoint.trim(),
+    nextStep: nextStep.trim(),
+
+    updatedAt: new Date().toISOString(),
+  };
+
+  projects[index] = updatedProject;
+
+  saveProjects(projects);
+
+  return updatedProject;
+}
+
 function deleteProject(id: string): boolean {
   const projects = loadProjects();
 
@@ -126,5 +164,6 @@ export const projectService = {
   getProjectById,
   createProject,
   updateProject,
+  updateProjectProgress,
   deleteProject,
 };
