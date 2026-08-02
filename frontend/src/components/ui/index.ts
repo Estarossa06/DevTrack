@@ -7,3 +7,4 @@ export { default as Input } from "./Input";
 export { default as PasswordInput } from "./PasswordInput";
 export { default as Progress } from "./Progress";
 export { default as Textarea } from "./Textarea/Textarea";
+export { default as ConfirmDialog } from "./ConfirmDialog/ConfirmDialog";

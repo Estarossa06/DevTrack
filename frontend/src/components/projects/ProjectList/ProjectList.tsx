@@ -15,11 +15,13 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 type ProjectListProps = {
   projects: Project[];
   onEdit: (project: Project) => void;
+  onDelete: (project: Project) => void;
 };
 
 export default function ProjectList({
   projects,
   onEdit,
+  onDelete,
 }: ProjectListProps) {
   return (
     <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -28,6 +30,7 @@ export default function ProjectList({
           key={project.id}
           project={project}
           onEdit={() => onEdit(project)}
+          onDelete={() => onDelete(project)}
         />
       ))}
     </div>

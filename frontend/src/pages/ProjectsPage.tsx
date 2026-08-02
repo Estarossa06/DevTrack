@@ -18,7 +18,10 @@ import {
 
 import EmptyState from "@/components/shared/EmptyState";
 
-import { Button } from "@/components/ui";
+import {
+  Button,
+  ConfirmDialog,
+} from "@/components/ui";
 
 import { useProjects } from "@/hooks/useProjects";
 
@@ -35,12 +38,16 @@ export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] =
     useState<Project | null>(null);
 
+  const [projectToDelete, setProjectToDelete] =
+    useState<Project | null>(null);
+
   const {
     projects,
     loading,
     error,
     createProject,
     updateProject,
+    deleteProject,
   } = useProjects();
 
   function handleCreateProject(
@@ -72,6 +79,20 @@ export default function ProjectsPage() {
   function handleCloseEditModal() {
     setSelectedProject(null);
     setIsEditModalOpen(false);
+  }
+
+  function handleDeleteProject(project: Project) {
+    setProjectToDelete(project);
+  }
+
+  function handleConfirmDeleteProject() {
+  if (!projectToDelete) {
+    return;
+  }
+
+  deleteProject(projectToDelete.id);
+
+  setProjectToDelete(null);
   }
 
   if (loading) {
@@ -126,6 +147,7 @@ export default function ProjectsPage() {
           <ProjectList
             projects={projects}
             onEdit={handleEditProject}
+            onDelete={handleDeleteProject}
           />
         )}
       </main>
@@ -143,6 +165,25 @@ export default function ProjectsPage() {
         project={selectedProject}
         onClose={handleCloseEditModal}
         onSubmit={handleUpdateProject}
+      />
+
+      <ConfirmDialog
+        open={projectToDelete !== null}
+        title="Eliminar proyecto"
+        description={
+          <>
+            ¿Estás seguro de que quieres eliminar{" "}
+            <strong>{projectToDelete?.title}</strong>?
+            Esta acción no se puede deshacer.
+          </>
+        }
+        confirmText="Eliminar"
+        cancelText="Cancelar"
+        danger
+        onCancel={() =>
+          setProjectToDelete(null)
+        }
+        onConfirm={handleConfirmDeleteProject}
       />
     </>
   );

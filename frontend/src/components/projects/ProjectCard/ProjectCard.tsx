@@ -12,11 +12,13 @@ import {
 interface ProjectCardProps {
   project: Project;
   onEdit: () => void;
+  onDelete: () => void;
 }
 
 export default function ProjectCard({
   project,
   onEdit,
+  onDelete,
 }: ProjectCardProps) {
   const navigate = useNavigate();
 
@@ -45,9 +47,7 @@ export default function ProjectCard({
                 label: "Eliminar",
                 icon: <Trash2 size={16} />,
                 danger: true,
-                onClick: () => {
-                  // Se implementará en el siguiente paso.
-                },
+                onClick: onDelete,
               },
             ]}
           />
