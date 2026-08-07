@@ -8,20 +8,42 @@
  * ============================================================
  */
 
-import { CheckCircle2, Circle } from "lucide-react";
+import {
+  CheckCircle2,
+  Circle,
+  Pencil,
+  Trash2,
+} from "lucide-react";
 
-import { Badge, Card } from "@/components/ui";
+import {
+  Badge,
+  Button,
+  Card,
+} from "@/components/ui";
 
 import type { Task } from "@/types/task";
 
 interface TaskCardProps {
   task: Task;
-  onToggleComplete: (task: Task) => void;
+
+  onToggleComplete: (
+    task: Task
+  ) => void;
+
+  onEdit: (
+    task: Task
+  ) => void;
+
+  onDelete: (
+    task: Task
+  ) => void;
 }
 
 export default function TaskCard({
   task,
   onToggleComplete,
+  onEdit,
+  onDelete,
 }: TaskCardProps) {
   const isCompleted =
     task.status === "completed";
@@ -39,69 +61,123 @@ export default function TaskCard({
   }[task.priority];
 
   return (
-    <Card>
-      <div className="flex items-start justify-between gap-6">
-        <div className="flex min-w-0 gap-4">
-          <button
-            type="button"
-            onClick={() =>
-              onToggleComplete(task)
-            }
-            className="
-              mt-1
-              shrink-0
+    <Card
+  className="
+    group
+    transition-all
+    duration-200
+    hover:-translate-y-0.5
+    hover:shadow-lg
+    hover:border-[var(--color-primary)]/30
+  "
+>
+  <div className="flex items-start justify-between gap-6">
+
+    {/* Left Section */}
+    <div className="flex min-w-0 gap-4">
+
+      {/* Complete Button */}
+      <button
+        type="button"
+        onClick={() => onToggleComplete(task)}
+        className="
+          mt-1
+          shrink-0
+          text-[var(--color-text-secondary)]
+          transition-colors
+          hover:text-[var(--color-primary)]
+        "
+        aria-label={
+          isCompleted
+            ? "Reopen task"
+            : "Complete task"
+        }
+      >
+        {isCompleted ? (
+          <CheckCircle2 size={22} />
+        ) : (
+          <Circle size={22} />
+        )}
+      </button>
+
+      {/* Content */}
+      <div className="min-w-0">
+
+        {/* Title */}
+        <h3
+          className={`text-lg font-semibold tracking-tight text-[var(--color-text)] ${
+            isCompleted
+              ? "line-through opacity-60"
+              : ""
+          }`}
+        >
+          {task.title}
+        </h3>
+
+        {/* Description */}
+        {task.description && (
+          <p
+            className={`
+              mt-2
+              text-sm
+              leading-6
               text-[var(--color-text-secondary)]
-              transition-colors
-              hover:text-[var(--color-primary)]
-            "
-            aria-label={
-              isCompleted
-                ? "Reopen task"
-                : "Complete task"
-            }
+              ${isCompleted ? "opacity-60" : ""}
+            `}
           >
-            {isCompleted ? (
-              <CheckCircle2 size={22} />
-            ) : (
-              <Circle size={22} />
-            )}
-          </button>
+            {task.description}
+          </p>
+        )}
 
-          <div className="min-w-0">
-            <h3
-              className={`text-lg font-semibold text-[var(--color-text)] ${
-                isCompleted
-                  ? "line-through opacity-60"
-                  : ""
-              }`}
-            >
-              {task.title}
-            </h3>
+        {/* Metadata */}
+        <div className="mt-4 flex items-center gap-2">
 
-            {task.description && (
-              <p
-                className={`mt-2 text-sm text-[var(--color-text-secondary)] ${
-                  isCompleted
-                    ? "opacity-60"
-                    : ""
-                }`}
-              >
-                {task.description}
-              </p>
-            )}
-          </div>
-        </div>
-
-        <div className="flex shrink-0 items-center gap-2">
           <Badge>
             {statusLabel}
           </Badge>
 
-          <Badge>
+          <Badge variant="secondary">
             {priorityLabel}
           </Badge>
+
         </div>
+
       </div>
-    </Card>
+    </div>
+
+    {/* Right Section */}
+    <div
+      className="
+        flex
+        items-center
+        gap-2
+
+        opacity-0
+        transition-opacity
+        duration-200
+
+        group-hover:opacity-100
+      "
+    >
+      <Button
+        size="sm"
+        variant="ghost"
+        onClick={() => onEdit(task)}
+      >
+        <Pencil size={16} />
+      </Button>
+
+      <Button
+        size="sm"
+        variant="ghost"
+        onClick={() => onDelete(task)}
+      >
+        <Trash2 size={16} />
+      </Button>
+
+    </div>
+
+  </div>
+</Card>
   );
 }

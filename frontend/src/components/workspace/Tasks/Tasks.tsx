@@ -9,11 +9,13 @@
 
 import { useState } from "react";
 import { CheckSquare, Plus } from "lucide-react";
-import TaskCard from "./TaskCard";
 
 import EmptyState from "@/components/shared/EmptyState";
 
-import { Button } from "@/components/ui";
+import {
+  Button,
+  ConfirmDialog,
+} from "@/components/ui";
 
 import { useTasks } from "@/hooks/useTasks";
 
@@ -21,6 +23,8 @@ import type { Task } from "@/types/task";
 import type { TaskForm } from "@/types/taskForm";
 
 import CreateTaskModal from "./CreateTaskModal";
+import EditTaskModal from "./EditTaskModal";
+import TaskCard from "./TaskCard";
 
 interface TasksProps {
   projectId: string;
@@ -32,12 +36,22 @@ export default function Tasks({
   const [isCreateModalOpen, setIsCreateModalOpen] =
     useState(false);
 
+  const [isEditModalOpen, setIsEditModalOpen] =
+    useState(false);
+
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] =
+    useState(false);
+
+  const [selectedTask, setSelectedTask] =
+    useState<Task | null>(null);
+
   const {
     tasks,
     loading,
     error,
     createTask,
     updateTask,
+    deleteTask,
   } = useTasks(projectId);
 
   function handleCreateTask(form: TaskForm) {
@@ -51,16 +65,60 @@ export default function Tasks({
   }
 
   function handleToggleComplete(task: Task) {
-  updateTask(task.id, {
-    title: task.title,
-    description: task.description,
-    status:
-      task.status === "completed"
-        ? "pending"
-        : "completed",
-    priority: task.priority,
-  });
-}
+    updateTask(task.id, {
+      title: task.title,
+      description: task.description,
+      status:
+        task.status === "completed"
+          ? "pending"
+          : "completed",
+      priority: task.priority,
+    });
+  }
+
+  function handleEditTask(task: Task) {
+    setSelectedTask(task);
+    setIsEditModalOpen(true);
+  }
+
+  function handleUpdateTask(
+    form: TaskForm
+  ) {
+    if (!selectedTask) {
+      return;
+    }
+
+    updateTask(selectedTask.id, form);
+
+    setSelectedTask(null);
+    setIsEditModalOpen(false);
+  }
+
+  function handleCloseEditModal() {
+    setSelectedTask(null);
+    setIsEditModalOpen(false);
+  }
+
+  function handleDeleteTask(task: Task) {
+    setSelectedTask(task);
+    setIsDeleteDialogOpen(true);
+  }
+
+  function confirmDeleteTask() {
+    if (!selectedTask) {
+      return;
+    }
+
+    deleteTask(selectedTask.id);
+
+    setSelectedTask(null);
+    setIsDeleteDialogOpen(false);
+  }
+
+  function closeDeleteDialog() {
+    setSelectedTask(null);
+    setIsDeleteDialogOpen(false);
+  }
 
   if (loading) {
     return (
@@ -119,23 +177,27 @@ export default function Tasks({
             }
           />
         ) : (
-  <div className="space-y-4">
-    <p className="text-sm text-[var(--color-text-secondary)]">
-      {tasks.length}{" "}
-      {tasks.length === 1
-        ? "task"
-        : "tasks"}
-    </p>
+          <div className="space-y-4">
+            <p className="text-sm text-[var(--color-text-secondary)]">
+              {tasks.length}{" "}
+              {tasks.length === 1
+                ? "task"
+                : "tasks"}
+            </p>
 
-    {tasks.map((task) => (
-      <TaskCard
-        key={task.id}
-        task={task}
-        onToggleComplete={handleToggleComplete}
-      />
-    ))}
-  </div>
-)}
+            {tasks.map((task) => (
+              <TaskCard
+                key={task.id}
+                task={task}
+                onToggleComplete={
+                  handleToggleComplete
+                }
+                onEdit={handleEditTask}
+                onDelete={handleDeleteTask}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <CreateTaskModal
@@ -144,6 +206,23 @@ export default function Tasks({
           setIsCreateModalOpen(false)
         }
         onSubmit={handleCreateTask}
+      />
+
+      <EditTaskModal
+        open={isEditModalOpen}
+        task={selectedTask}
+        onClose={handleCloseEditModal}
+        onSubmit={handleUpdateTask}
+      />
+
+      <ConfirmDialog
+        open={isDeleteDialogOpen}
+        title="Delete Task"
+        description="Are you sure you want to delete this task? This action cannot be undone."
+        confirmText="Delete"
+        cancelText="Cancel"
+        onConfirm={confirmDeleteTask}
+        onCancel={closeDeleteDialog}
       />
     </>
   );
