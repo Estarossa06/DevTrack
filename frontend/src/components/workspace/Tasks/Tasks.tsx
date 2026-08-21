@@ -64,15 +64,19 @@ export default function Tasks({
     setIsCreateModalOpen(false);
   }
 
-  function handleToggleComplete(task: Task) {
-    updateTask(task.id, {
-      title: task.title,
-      description: task.description,
-      status:
-        task.status === "completed"
-          ? "pending"
-          : "completed",
-      priority: task.priority,
+  function handleToggleStatus(task: Task) {
+  const nextStatus =
+    task.status === "pending"
+      ? "in_progress"
+      : task.status === "in_progress"
+      ? "completed"
+      : "pending";
+
+  updateTask(task.id, {
+    title: task.title,
+    description: task.description,
+    status: nextStatus,
+    priority: task.priority,
     });
   }
 
@@ -189,8 +193,8 @@ export default function Tasks({
               <TaskCard
                 key={task.id}
                 task={task}
-                onToggleComplete={
-                  handleToggleComplete
+                onToggleStatus={
+                  handleToggleStatus
                 }
                 onEdit={handleEditTask}
                 onDelete={handleDeleteTask}

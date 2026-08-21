@@ -16,17 +16,18 @@ import {
 } from "lucide-react";
 
 import {
-  Badge,
   Button,
   Card,
 } from "@/components/ui";
 
 import type { Task } from "@/types/task";
+import StatusBadge from "./StatusBadge";
+import PriorityBadge from "./PriorityBadge";
 
 interface TaskCardProps {
   task: Task;
 
-  onToggleComplete: (
+  onToggleStatus: (
     task: Task
   ) => void;
 
@@ -41,24 +42,18 @@ interface TaskCardProps {
 
 export default function TaskCard({
   task,
-  onToggleComplete,
+  onToggleStatus,
   onEdit,
   onDelete,
 }: TaskCardProps) {
   const isCompleted =
-    task.status === "completed";
+  task.status === "completed";
 
-  const statusLabel = {
-    pending: "Pending",
-    in_progress: "In Progress",
-    completed: "Completed",
+  const nextStatusLabel = {
+  pending: "Move task to in progress",
+  in_progress: "Complete task",
+  completed: "Reopen task",
   }[task.status];
-
-  const priorityLabel = {
-    low: "Low",
-    medium: "Medium",
-    high: "High",
-  }[task.priority];
 
   return (
     <Card
@@ -79,7 +74,7 @@ export default function TaskCard({
       {/* Complete Button */}
       <button
         type="button"
-        onClick={() => onToggleComplete(task)}
+        onClick={() => onToggleStatus(task)}
         className="
           mt-1
           shrink-0
@@ -87,11 +82,7 @@ export default function TaskCard({
           transition-colors
           hover:text-[var(--color-primary)]
         "
-        aria-label={
-          isCompleted
-            ? "Reopen task"
-            : "Complete task"
-        }
+        aria-label={nextStatusLabel}
       >
         {isCompleted ? (
           <CheckCircle2 size={22} />
@@ -132,13 +123,9 @@ export default function TaskCard({
         {/* Metadata */}
         <div className="mt-4 flex items-center gap-2">
 
-          <Badge>
-            {statusLabel}
-          </Badge>
+          <StatusBadge status={task.status} />
 
-          <Badge variant="secondary">
-            {priorityLabel}
-          </Badge>
+          <PriorityBadge priority={task.priority} />
 
         </div>
 

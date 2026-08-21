@@ -16,6 +16,7 @@ import {
   Textarea,
 } from "@/components/ui";
 
+import type { TaskPriority } from "@/types/task";
 import type { TaskForm } from "@/types/taskForm";
 
 interface CreateTaskModalProps {
@@ -35,6 +36,9 @@ export default function CreateTaskModal({
   const [description, setDescription] =
     useState("");
 
+  const [priority, setPriority] =
+    useState<TaskPriority>("medium");
+
   const [error, setError] =
     useState<string | null>(null);
 
@@ -45,6 +49,7 @@ export default function CreateTaskModal({
 
     setTitle("");
     setDescription("");
+    setPriority("medium");
     setError(null);
   }, [open]);
 
@@ -60,7 +65,7 @@ export default function CreateTaskModal({
       title: normalizedTitle,
       description: description.trim(),
       status: "pending",
-      priority: "medium",
+      priority,
     };
 
     onSubmit(form);
@@ -112,14 +117,61 @@ export default function CreateTaskModal({
               placeholder="Describe what needs to be done..."
               value={description}
               onChange={(event) =>
-                setDescription(
-                  event.target.value
-                )
+                setDescription(event.target.value)
               }
             />
 
             <div className="mt-2 text-right text-xs text-[var(--color-text-secondary)]">
               {description.length}/300
+            </div>
+          </FormField>
+
+          <FormField label="Priority">
+            <div className="grid grid-cols-3 gap-3">
+              <Button
+                type="button"
+                variant="secondary"
+                className={
+  priority === "low"
+    ? "border border-gray-400/50 bg-gray-500/10 text-gray-300"
+    : "opacity-60"
+}
+                onClick={() =>
+                  setPriority("low")
+                }
+              >
+                Low
+              </Button>
+
+              <Button
+                type="button"
+                variant="secondary"
+                className={
+  priority === "medium"
+    ? "border border-orange-400/60 bg-orange-500/10 text-orange-300"
+    : "opacity-60"
+}
+                onClick={() =>
+                  setPriority("medium")
+                }
+              >
+                Medium
+              </Button>
+
+              <Button
+                type="button"
+                variant="secondary"
+                className={
+  priority === "high"
+    ? "border border-red-400/60 bg-red-500/10 text-red-300"
+    : "opacity-60"
+}
+                onClick={() =>
+                  setPriority("high")
+                }
+              >
+                High
+              </Button>
             </div>
           </FormField>
         </div>

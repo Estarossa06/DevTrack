@@ -8,11 +8,13 @@ import {
 interface BadgeProps {
   children: string;
   variant?: "default" | "secondary";
+  className?: string;
 }
 
 export default function Badge({
   children,
   variant = "default",
+  className = "",
 }: BadgeProps) {
 
   const status = children.toLowerCase();
@@ -50,18 +52,20 @@ export default function Badge({
   };
 
   if (variant === "secondary") {
-    return (
-      <span
-        className="
-          rounded-full
-          bg-[var(--color-surface-hover)]
-          px-3
-          py-1
-          text-xs
-          font-medium
-          text-[var(--color-text)]
-        "
-      >
+  return (
+    <span
+      className={`
+        rounded-full
+        bg-[var(--color-surface-hover)]
+        px-3
+        py-1
+        text-xs
+        font-medium
+        text-[var(--color-text)]
+
+        ${className}
+      `}
+    >
         {children}
       </span>
     );
@@ -71,12 +75,24 @@ export default function Badge({
     statusConfig[status as keyof typeof statusConfig];
 
   if (!config) {
-    return (
-      <span className="rounded-full bg-[var(--color-surface-hover)] px-3 py-1 text-xs">
-        {children}
-      </span>
-    );
-  }
+  return (
+    <span
+      className={`
+        inline-flex
+        items-center
+        rounded-full
+        px-3
+        py-1
+        text-xs
+        font-semibold
+
+        ${className}
+      `}
+    >
+      {children}
+    </span>
+  );
+}
 
   const Icon = config.icon;
 
@@ -93,6 +109,7 @@ export default function Badge({
         font-semibold
 
         ${config.className}
+        ${className}
       `}
     >
       <Icon size={14} />
